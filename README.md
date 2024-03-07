@@ -2,6 +2,8 @@
 
 This is a full frontend and backend application ( Angular, Spring Boot, Firebase, H2 Database ).
 
+![Pokemon Image](./Frontend/app/src/assets/pokemon_images/Pikachu.png)
+
 ## Backend Running
 Steps to run the application.
 - Step 1.	Add the pokeapp folder to your workspace.
