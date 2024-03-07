@@ -1,0 +1,105 @@
+.global {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Ancho mínimo y máximo de las columnas */
+    gap: 10px; /* Espacio entre elementos */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media query para dispositivos más pequeños */
+@media screen and (max-width: 768px) {
+    .global {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cambia el número de columnas en dispositivos más pequeños */
+    }
+}
+
+.back {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    color: #fff;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.back::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    z-index: 4;
+}
+.container .box{
+    position: relative;
+    width: 325px;
+    height: 450px;
+    margin: 40px;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+
+.container .box .name{
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding-left: 4rem;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 75px);
+    color: #fff;
+    opacity: 0;
+    z-index: 10;
+    transition: .5s;
+}
+
+.container .box:hover .name{
+    top: 40px;
+    opacity: 1;
+}
+
+.container .box .play{
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform-style: preserve-3d;
+    color: #fff;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(5px);
+    padding: 20px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: .5s;
+    transform: translate3d(-50%, 0, 80px);
+    width: 150px;
+    font-weight: 600;
+    text-align: center;
+    z-index: 10;
+}
+
+.container .box .pokemon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 300px;
+    transition: .5s;
+}
+
+.container .box:hover .pokemon{
+    transform: translate3d(-50%, -50%, 100px);
+}

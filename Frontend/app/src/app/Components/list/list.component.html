@@ -1,0 +1,10 @@
+<button class="btn btn-primary mt-5" type="button" routerLink="/">Volver atras</button>
+<div class="global">
+<div class="container container-fluid" *ngFor="let pokemon of ws.pokemonDTOs">
+    <div class="box">
+        <h2 class="name">{{ pokemon.name }}</h2>
+        <a href="/list" class="play" routerLink="list">{{ pokemon.type }}</a>
+        <img width="375" src="../../../assets/pokemon_images/{{ pokemon.avatar }}" alt="Pokemon image" class="pokemon">
+    </div>
+</div>
+</div>
